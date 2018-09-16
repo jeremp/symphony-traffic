@@ -1,0 +1,5 @@
+<messageML>
+    <h3>Traffic message</h3>
+    <p>Going from %s to %s will now take you <span class="tempo-text-color--%s">
+    <b>%s minutes</b></span></p>
+</messageML>

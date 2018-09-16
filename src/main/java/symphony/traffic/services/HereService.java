@@ -37,7 +37,7 @@ public class HereService {
         this.symphonyService = symphonyService;
     }
 
-    public void checkTraffic(){
+    public void checkTraffic() throws IOException {
         if(checkProperties()==false){
             System.exit(0);
             return ;
