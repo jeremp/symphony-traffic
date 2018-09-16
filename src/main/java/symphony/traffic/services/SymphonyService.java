@@ -23,11 +23,11 @@ public class SymphonyService {
     RxHttpClient httpClient;
 
     private static final String MESSAGEML_TEMPLATE = "<messageML>\n" +
-            "  Going from %s to %s will now take you <b>%s</b>\n" +
+            "  Going from %s to %s will now take you <b>%s minutes</b>\n" +
             "</messageML>";
 
-    public void sendTrafficMessage(long durationMinutes, String symphonyWebHookId){
-        String messageML = String.format(MESSAGEML_TEMPLATE, "Sophia-Antipolis", "Nice", Duration.ofSeconds(durationMinutes));
+    public void sendTrafficMessage(long durationSeconds, String symphonyWebHookId){
+        String messageML = String.format(MESSAGEML_TEMPLATE, "Sophia-Antipolis", "Nice", Long.toString(durationSeconds / 60));
         Flowable<HttpResponse<String>> call = httpClient.exchange(
                 HttpRequest.POST(symphonyWebHookId, messageML), String.class
         );

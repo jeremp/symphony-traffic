@@ -20,7 +20,7 @@ public class TrafficJob {
         this.hereService = hereService;
     }
 
-    @Scheduled(fixedDelay = "45s", initialDelay = "2s")
+    @Scheduled(fixedDelay = "5h", initialDelay = "5s")
     void executeEveryFourtyFive() {
         try {
             LOG.info("Simple Job every 45 seconds :{}", new SimpleDateFormat("dd/M/yyyy hh:mm:ss").format(new Date()));
